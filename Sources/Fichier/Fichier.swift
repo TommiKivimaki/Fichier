@@ -112,7 +112,7 @@ final public class Fichier: NSObject {
   /// Finds all the files in a directory and in any of its sub-directories. Recursive search without any limit for the amount of nested sub-directories.
   /// - Parameter urls: URLs that need to be searched
   /// - Parameter found: Found URLs
-  func getAllFiles(from urls: [URL], _ found: [URL] = []) throws -> [URL] {
+  public func getAllFiles(from urls: [URL], _ found: [URL] = []) throws -> [URL] {
     if let head = urls.first {
       var tail = Array(urls.dropFirst())
       var files: [URL] = []
