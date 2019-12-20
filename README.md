@@ -1,3 +1,5 @@
 # Fichier
 
-A description of this package.
+Fichier [fiʃje] (File)
+
+Methods for handling files.
