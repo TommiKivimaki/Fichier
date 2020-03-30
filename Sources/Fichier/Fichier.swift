@@ -111,7 +111,7 @@ final public class Fichier: NSObject {
   
   /// Returns users document directory
   /// - Returns: The URL of the documents directory
-  func getDocumentsDirectory() -> URL {
+  static public func getDocumentsDirectory() -> URL {
       let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
       let documentsDirectory = paths[0]
       return documentsDirectory

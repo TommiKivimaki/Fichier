@@ -16,7 +16,7 @@ final class FichierTests: XCTestCase {
   
   
   func testGetDocumentsDirectory() {
-    let directory = files.getDocumentsDirectory()
+    let directory = Fichier.getDocumentsDirectory()
     XCTAssertEqual(directory.lastPathComponent, "Documents")
   }
   
