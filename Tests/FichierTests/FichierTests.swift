@@ -2,14 +2,25 @@ import XCTest
 @testable import Fichier
 
 final class FichierTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-//        XCTAssertEqual(Fichier().text, "Hello, World!")
-    }
+  
+  var files: Fichier!
+  
 
-    static var allTests = [
-        ("testExample", testExample),
-    ]
+  override func setUp() {
+    files = Fichier()
+  }
+  
+  override func tearDown() {
+    files = nil
+  }
+  
+  
+  func testGetDocumentsDirectory() {
+    let directory = files.getDocumentsDirectory()
+    XCTAssertEqual(directory.lastPathComponent, "Documents")
+  }
+  
+  static var allTests = [
+    ("testGetDocumentsDirectory", testGetDocumentsDirectory),
+  ]
 }

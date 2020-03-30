@@ -101,13 +101,21 @@ final public class Fichier: NSObject {
   }
   
   
-  /// Return a current directory
+  /// Returns a current directory
   /// - Returns: The URL of a current directory
   public func getCurrentDirectory() -> URL {
     let current = fileManager.currentDirectoryPath
     return URL(fileURLWithPath: current, isDirectory: true)
   }
   
+  
+  /// Returns users document directory
+  /// - Returns: The URL of the documents directory
+  func getDocumentsDirectory() -> URL {
+      let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+      let documentsDirectory = paths[0]
+      return documentsDirectory
+  }
   
   /// Finds all the files in a directory and in any of its sub-directories. Recursive search without any limit for the amount of nested sub-directories.
   /// - Parameter urls: URLs that need to be searched
